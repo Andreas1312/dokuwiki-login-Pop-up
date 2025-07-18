@@ -1,0 +1,9 @@
+base   loginpopup
+name   Login Pop-up
+author Andreas
+email  agrundrs@gmail.com
+date   2025-07-18
+url    https://github.com/Andreas1312/dokuwiki-login-Pop-up
+version 1.2
+license  MIT
+desc   Zeigt nach dem Login einen Hinweistext aus einer definierten Wiki-Seite als Pop-up an. Nach der eingestellten Zeit wird das Pop-up erneut angezeigt.
