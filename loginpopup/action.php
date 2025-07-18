@@ -37,16 +37,18 @@ class action_plugin_loginpopup extends DokuWiki_Action_Plugin {
         if ($ttl <= 0) $ttl = 3600;
 
         // HTML + JS zur Anzeige des Modals mit localStorage-Steuerung
-        echo "<script>
+        echo "<link href='https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css' rel='stylesheet'>
+        <script>
           const now = Math.floor(Date.now() / 1000);
           const nextAllowed = localStorage.getItem('loginpopup_next') || 0;
           if (parseInt(nextAllowed) <= now) {
             document.write(`
               <div id='loginpopup-modal' style='position:fixed;top:0;left:0;width:100%;height:100%;background:#00000099;z-index:9999;display:flex;align-items:center;justify-content:center;'>
-                <div style='background:#fff;padding:20px;max-width:600px;border-radius:8px;box-shadow:0 0 20px #000;'>
-                  <h2>Hinweis</h2>
-                  <div>{$popupText}</div>
-                  <button onclick=\"document.getElementById('loginpopup-modal').remove()\" style='margin-top:20px;'>Schließen</button>
+                <div style='background:#fff;padding:20px;max-width:600px;border-radius:8px;box-shadow:0 0 20px #000;position:relative;'>
+                  <i class='bi bi-x-circle-fill' onclick=\\\"document.getElementById('loginpopup-modal').remove()\\\" 
+                     style='position:absolute;top:10px;right:10px;font-size:24px;color:#666;cursor:pointer;' 
+                      title='Close'></i>
+                    <div>{$popupText}</div>
                 </div>
               </div>`);
             localStorage.setItem('loginpopup_next', now + {$ttl});
