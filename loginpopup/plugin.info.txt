@@ -1,0 +1,9 @@
+base   loginpopup
+name   Login Pop-up
+author Dein Name
+email  deine@email.de
+date   2025-07-18
+url    https://dokuwiki.org/plugin:loginpopup
+version 1.2
+license  MIT
+desc   Zeigt nach dem Login einen Hinweistext aus einer definierten Wiki-Seite als Pop-up an.
